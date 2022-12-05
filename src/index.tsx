@@ -122,7 +122,7 @@ export default function Command() {
       actions={
         <ActionPanel>
           <Action title="Send" icon={Icon.Message} onAction={sendMessage} />
-          <Action title="Change ChatGPT token" icon={Icon.Gear} onAction={() => openCommandPreferences()} />
+          <Action title="Change ChatGPT Token" icon={Icon.Gear} onAction={() => openCommandPreferences()} />
         </ActionPanel>
       }
       isShowingDetail={true}
@@ -137,8 +137,8 @@ export default function Command() {
             actions={
               <ActionPanel>
                 <Action title="Send" icon={Icon.Message} onAction={sendMessage} />
-                <Action title="Reset conversation" icon={Icon.Repeat} onAction={resetConversation} />
-                <Action title="Change ChatGPT token" icon={Icon.Gear} onAction={() => openCommandPreferences()} />
+                <Action title="Reset Conversation" icon={Icon.Repeat} onAction={resetConversation} />
+                <Action title="Change ChatGPT Token" icon={Icon.Gear} onAction={() => openCommandPreferences()} />
               </ActionPanel>
             }
           />
