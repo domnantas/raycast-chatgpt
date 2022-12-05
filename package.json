@@ -11,21 +11,22 @@
     "Web"
   ],
   "license": "MIT",
+  "preferences": [
+    {
+      "name": "chatGPTToken",
+      "title": "ChatGPT JWT token",
+      "description": "Click About This Extension to learn how to obtain it",
+      "type": "password",
+      "required": true
+    }
+  ],
   "commands": [
     {
       "name": "index",
-      "title": "ChatGPT",
-      "description": "Prompt ChatGPT. Click About This Extension to learn how to obtain the JWT token",
-      "mode": "view",
-      "preferences": [
-        {
-          "name": "chatGPTToken",
-          "title": "ChatGPT JWT token",
-          "description": "Click About This Extension to learn how to obtain it",
-          "type": "password",
-          "required": true
-        }
-      ]
+      "title": "Prompt ChatGPT",
+      "subtitle": "OpenAI",
+      "description": "Click About This Extension to learn how to obtain the JWT token",
+      "mode": "view"
     }
   ],
   "dependencies": {
