@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "chatgpt",
   "title": "ChatGPT",
-  "description": "Prompt ChatGPT",
+  "description": "Prompt ChatGPT easily",
   "icon": "command-icon.png",
   "author": "domnantas",
   "categories": [
