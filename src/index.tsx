@@ -9,8 +9,8 @@ import {
   Toast,
 } from "@raycast/api";
 import { useState } from "react";
-import { TextDecoderStream } from "node:stream/web";
 import crypto from "crypto";
+import fetch from "node-fetch";
 
 type Preferences = {
   chatGPTToken: string;
@@ -62,18 +62,24 @@ export default function Command() {
         parent_message_id: previousMessageId,
         model: "text-davinci-002-render",
       }),
-      mode: "cors",
-      credentials: "include",
     });
-    const stream = response.body;
-    const textStream = stream?.pipeThrough(new TextDecoderStream());
+
     setIsLoading(false);
     setSelectedItemId(messageId);
 
-    // @ts-ignore
-    for await (const chunk of textStream) {
+    if (response.body === null) {
+      showToast({
+        style: Toast.Style.Failure,
+        title: "Error",
+        message: "Something went wrong while making requests to OpenAI API",
+      });
+
+      return;
+    }
+
+    for await (const chunk of response.body) {
       try {
-        const chunkData = JSON.parse(chunk.replace("data: ", ""));
+        const chunkData = JSON.parse(chunk.toString().replace("data: ", ""));
         if (chunkData?.detail?.code === "token_expired") {
           showToast({
             style: Toast.Style.Failure,
@@ -100,6 +106,8 @@ export default function Command() {
             receivedId: chunkData.message.id,
           },
         });
+        // Swallowing JSON.parse errors when streamed JSON is incomplete
+        // eslint-disable-next-line no-empty
       } catch (error) {}
     }
 
