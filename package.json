@@ -15,7 +15,7 @@
     {
       "name": "index",
       "title": "ChatGPT",
-      "description": "Prompt ChatGPT",
+      "description": "Prompt ChatGPT. Click About This Extension to learn how to obtain the JWT token",
       "mode": "view",
       "preferences": [
         {
