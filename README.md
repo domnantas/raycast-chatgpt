@@ -2,6 +2,10 @@
 
 <img src="assets/chatgpt-icon.png" height="128">
 
+> **Warning**
+>
+> OpenAI has implemented additional security measures for their backend, so this no longer works. I will not be maintaining this extension, it was just a fun weekend project. As an alternative, check out [abielzulio/chatgpt-raycast](https://github.com/abielzulio/chatgpt-raycast)
+
 Prompt OpenAI [ChatGPT](https://chat.openai.com/) using Raycast. Extension uses unofficial API. It can stop working anytime and it may be breaking OpenAI ChatGPT Terms of Service. Use at your own risk.
 
 <img src="demo.gif">
